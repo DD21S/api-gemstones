@@ -8,6 +8,9 @@ Bundler.require(*Rails.groups)
 
 module ApiGemstones
   class Application < Rails::Application
+    # API configuration
+    config.api_only = true
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
