@@ -1,18 +1,18 @@
 class GemstonesController < ApplicationController
   def index
-    @gemstones = Gemstones.all
+    @gemstones = Gemstone.all
 
     render json: @gemstones
   end
 
   def show
-    @gemstone = Gemstones.find params[:id]
+    @gemstone = Gemstone.find params[:id]
 
     render json: @gemstone
   end
 
   def create
-    @gemstone = Gemstones.new gemstone_params
+    @gemstone = Gemstone.new gemstone_params
 
     if @gemstone.save 
       render json: @gemstone
@@ -22,7 +22,7 @@ class GemstonesController < ApplicationController
   end
 
   def update
-    @gemstone = Gemstones.find params[:id]
+    @gemstone = Gemstone.find params[:id]
 
     if @gemstone.update gemstone_params
       render json: @gemstone
@@ -32,7 +32,7 @@ class GemstonesController < ApplicationController
   end
 
   def destroy
-    @gemstone = Gemstones.find params[:id]
+    @gemstone = Gemstone.find params[:id]
     @gemstone.destroy
 
     render json: {}
